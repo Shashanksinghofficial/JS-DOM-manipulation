@@ -127,3 +127,5 @@ btn.addEventListener("click", function (event) {
 });*/
 
 //---------------------------------
+/*fatch api and get output in web page , not in console,
+"*/
