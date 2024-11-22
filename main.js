@@ -50,8 +50,9 @@ console.log(tagName[1]);
 console.log(tagName[2]);
 /*--------------------------------*/
 // get element by class name//
-const className =document.getElementsByClassName("class");
-console.log(className);
+//index value is compulsory//
+const U =document.getElementsByClassName("className");
+console.log(U[0]);
 /*--------------------------------*/
 //getelementbyQuerySelector//
 //we use query by giving query with # for id, .dot for class//
@@ -63,8 +64,10 @@ console.log(querySelectorid);
 /* ------------------------------*/
 //if i have multiple same class or id then i use querySelecorAll //
 //not work💯//
-/*const queryAll =document.querySelectorAll(".queryall");
-console.log(queryAll);*/
+const Q =document.querySelectorAll(".queryall");
+Q.forEach(function(e) {
+  console.log(e);
+})
 
 
 /*-------------------------------*/
@@ -96,7 +99,6 @@ manipulation.style.color="green";
 //---------------------------------
 
 /* add title using add &classList*/
-//not work 💯
 manipulation.classList.add('title');
 /*remove a tag using remove*/
 //not work 💯
@@ -111,21 +113,71 @@ console.log(dom);
 //--------------------------------
 /* add in begin of text*/
 /*not work 💯*/
-const begin =document.createElement("span");
+/*const begin =document.createElement("span");
 begin.innerHTML="ankit";
 const starting =document.querySelector("#manipulation");
-dom.insertAdjacentElement("beforebegin",starting)
+dom.insertAdjacentElement("beforebegin",starting)*/
 //--------------------------------
 // -------DOM EVENT -------------
-//not work 💯
-/*const btn = document.querySelector("#switch");
-const result = document.querySelector("#result");
 
-btn.addEventListener("click", function (event) {
-  result.style.color = "purple";
+const B = document.querySelector("#switch");
+const R = document.querySelector("#result");
+
+B.addEventListener("click", function (event) {
+  R.style.color = "purple";
   console.log("button clicked", event);
-});*/
+});
 
 //---------------------------------
 /*fatch api and get output in web page , not in console,
 "*/
+
+/*-----------+++++++++++++------------------+++++++++++++++----++*/
+/* +----------another---+-------+*/
+/*"What is DOM?
+--> 4 Pillars of DOM
+--> Simple example of bulb or whatever clicking on the same button
+--> Multiple events
+--> selecting multiple elements at a same time
+--> setTimeout
+--> setInterval
+--> future projects"*/
+/*------------------------------"*/
+//DOM- DOCUMENT OBJECT MODEL 
+/*-------------------------------*/
+//4 PILLERS -
+//1.selection of an Element 
+//2.Changing Elements 
+//3.Changing Css
+//4.Event listener 
+/*-------------------------------*/
+/* select and element*/
+
+var a = document.querySelector("#a");
+console.log(a);
+//--------------------------------
+/* changing Element*/
+var b = document.querySelector("#b").innerHTML="This is changed element";
+//---------------------------------
+/* changing Css*/
+var c =document.querySelector("#c").style.color="orange";
+//---------------------------------
+/* add event listener*/
+var d =document.querySelector("#d");
+d.addEventListener('click',function() {
+  d.innerHTML="😂😂😂";
+  d.style.color="purple";
+  
+})
+//diffrence between innerHtml & textContent
+const e=document.querySelector("#e").innerHTML="<h1>it's innerHtml</h1>";
+var f=document.querySelector("#f").textContent="<h1>it's textContent</h1>";
+//---------------------------------------------------------------//
+//aatributes change//
+//g.placeholder, g.value, g.setAttributes("placeholder","Enter Mobile Number");
+
+var g=document.querySelector("#g");
+g.setAttribute("placeholder" ,"Enter mobile Number");
+/*var g = document.querySelector("#g");
+g.placeholder=("Enter your Mobile Number");*/
+//*******************************//
