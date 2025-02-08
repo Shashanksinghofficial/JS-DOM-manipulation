@@ -1,20 +1,24 @@
-/* onclick function with id insert and function insert()*/
+/*change css*/
   function insert(){
     document.getElementById("insert").style.color="blue"
   }
+  //-----------------------------//
   /* 2nd Example*/
-  /* onclick function with id name [change] and function change() with change text by innerHtml*/
+  /*change text by innerHtml*/
   function change(){
     document.getElementById("change").innerHTML="Rahul is my Best Friend"
   }
+  //-----------------------------//
   /*3 rd */
   /* this is not clickable because there use const not function and getelementbyId [transfer]and use innerHtml*/
   const element= document.getElementById("transfer");
   element.innerHTML="Hello Everyone";
+  //-----------------------------//
   /*4th*/
 document.getElementById("demo").innerHTML = "Date : " + Date();
 /*always D capital in date*/
 document.write(Date());
+  //-----------------------------//
 /*5th*/
 function validateForm() {
   let x = document.forms["myForm"]["fname"].value;
@@ -27,7 +31,8 @@ function validateForm() {
   }
 }
 }
-/*6--++++++++++++++++++++*/
+//-----------------------------//
+/*6*/
 function myFunction() {
   // Get the value of the input field with id="numb"
   let x = document.getElementById("numb").value;
@@ -40,20 +45,18 @@ function myFunction() {
   }
   document.getElementById("text").innerHTML = text;
 }
-
-
-/*-------------------------------*/
+//-------------------------------//
 //getElementbyTagName//
-//we can get tag name by giving tag name and its index start from 0,1,2,3.....n
-const tagName =document.getElementsByTagName("div");
-console.log(tagName[1]);
-console.log(tagName[2]);
-/*--------------------------------*/
-// get element by class name//
+// index start from 0,1,2,3.....n
+
+const div=document.getElementsByTagName("div");
+console.log(div[1]);
+console.log(div[2]);       
+/*-------------------------------*/// get element by class name//
 //index value is compulsory//
 const U =document.getElementsByClassName("className");
 console.log(U[0]);
-/*--------------------------------*/
+/*-------------------------------*/
 //getelementbyQuerySelector//
 //we use query by giving query with # for id, .dot for class//
 const querySelectorclass = document.querySelector(".query");
@@ -64,61 +67,52 @@ console.log(querySelectorid);
 /* ------------------------------*/
 //if i have multiple same class or id then i use querySelecorAll //
 //not work💯//
-const Q =document.querySelectorAll(".queryall");
+/*const Q =document.querySelectorAll(".queryall");
 Q.forEach(function(e) {
   console.log(e);
 })
-
-
-/*-------------------------------*/
-// parent access by parentNode//
-/*const parent =document.getElementById("parentid");
-const parents =parent.parentNode;
-console.log(parents);*/
 /* ------------------------------*/
-/* ChildNode*/
+/* ChildNode & parentNode*/
 /*-------------------------------*/
-
-
-/*-------------------------------*/
-/* next element sibling or previous element sibling*/
-
 /* previous siblings*/
-const sibling =document.querySelector("h3");
-console.log(sibling.previousElementSibling);
+const s =document.querySelector("h3");
+console.log(s.previousElementSibling);
 /*-------------------------------*/
 /* for next sibling*/
-const nxtsibling =document.querySelector("h3");
-console.log(nxtsibling.nextElementSibling);
+const ns =document.querySelector("h3");
+console.log(ns.nextElementSibling);
 /*-------------------------------*/
 /* text manipulation using innerHtml*/
-const manipulation =document.querySelector("#manipulation");
-manipulation.innerHTML=("This is change by InnerHtml");
-manipulation.style.fontSize="60px";
-manipulation.style.color="green";
-//---------------------------------
-
-/* add title using add &classList*/
-manipulation.classList.add('title');
+const m =document.querySelector("#manipulation");
+m.innerHTML=("This is change by InnerHtml");
+m.style.fontSize="16px";
+m.style.color="green";
+//-------------------------------//
+/* add & remove & classlist*/
+//-------------------------------//
 /*remove a tag using remove*/
-//not work 💯
-manipulation.classList.remove("p")
-/*--------------------------------*/
-/*create a heading with text using javascript and add in end of any text*/
-const dom =document.createElement("span");
-dom.innerHTML="ankit";
-const my =document.querySelector("#manipulation");
-my.appendChild(dom);
-console.log(dom);
+function r(){
+document.getElementById("remove").remove();
+}
+/*-------------------------------*/
+/*append text*/
+const appnd =document.createElement("span");
+appnd.innerHTML="ankit";
+const my =document.querySelector("#append");
+my.appendChild(appnd);
+my.style.color="red";
+console.log(appnd);
+//appendchild ए केवल एक value जोड़ सकते है जबकि append() के द्वारा कई सारी value जोड़ सकते है।//
 //--------------------------------
-/* add in begin of text*/
-/*not work 💯*/
-/*const begin =document.createElement("span");
-begin.innerHTML="ankit";
-const starting =document.querySelector("#manipulation");
-dom.insertAdjacentElement("beforebegin",starting)*/
+/*Prepend text*/
+const prepnd =document.createElement("span");
+prepnd.innerHTML="ankit";
+const you =document.querySelector("#prepend");
+you.prepend(prepnd);
+you.style.color="blue";
+console.log(prepnd);
 //--------------------------------
-// -------DOM EVENT -------------
+// -------DOM EVENT (CLICK)-----//
 
 const B = document.querySelector("#switch");
 const R = document.querySelector("#result");
@@ -127,13 +121,8 @@ B.addEventListener("click", function (event) {
   R.style.color = "purple";
   console.log("button clicked", event);
 });
-
 //---------------------------------
-/*fatch api and get output in web page , not in console,
-"*/
-
-/*-----------+++++++++++++------------------+++++++++++++++----++*/
-/* +----------another---+-------+*/
+/*fatch api and get output in web page,not in console*/
 /*"What is DOM?
 --> 4 Pillars of DOM
 --> Simple example of bulb or whatever clicking on the same button
@@ -151,33 +140,35 @@ B.addEventListener("click", function (event) {
 //3.Changing Css
 //4.Event listener 
 /*-------------------------------*/
-/* select and element*/
-
+/* select an element*/
 var a = document.querySelector("#a");
 console.log(a);
 //--------------------------------
 /* changing Element*/
 var b = document.querySelector("#b").innerHTML="This is changed element";
+console.log(b);
 //---------------------------------
 /* changing Css*/
 var c =document.querySelector("#c").style.color="orange";
+console.log(c)
 //---------------------------------
 /* add event listener*/
 var d =document.querySelector("#d");
 d.addEventListener('click',function() {
-  d.innerHTML="😂😂😂";
+  d.innerHTML="123456";
   d.style.color="purple";
-  
+  console.log(d);
 })
-//diffrence between innerHtml & textContent
+//-------------------------------//
+//diffrence between innerHTML & textContent
 const e=document.querySelector("#e").innerHTML="<h1>it's innerHtml</h1>";
 var f=document.querySelector("#f").textContent="<h1>it's textContent</h1>";
 //---------------------------------------------------------------//
-//aatributes change//
-//g.placeholder, g.value, g.setAttributes("placeholder","Enter Mobile Number");
+//attributes change//
+//g.placeholder,g.value, g.setAttributes("placeholder","Enter Mobile Number");
 
 var g=document.querySelector("#g");
 g.setAttribute("placeholder" ,"Enter mobile Number");
-/*var g = document.querySelector("#g");
-g.placeholder=("Enter your Mobile Number");*/
+var g = document.querySelector("#g");
+g.placeholder=("Enter your Mobile Number");
 //*******************************//
