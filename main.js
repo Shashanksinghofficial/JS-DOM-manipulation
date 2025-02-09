@@ -172,3 +172,5 @@ g.setAttribute("placeholder" ,"Enter mobile Number");
 var g = document.querySelector("#g");
 g.placeholder=("Enter your Mobile Number");
 //*******************************//
+const add = (a, b) => a + b;
+console.log(add(5, 3)); 
